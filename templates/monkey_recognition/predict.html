@@ -5,8 +5,14 @@
 {% block content %}
     <h1>{{title}}</h1>
     {% for pred in predictions %}
-        <img src="static/uploads/{{ pred.img }}" width="150" />
-        is a {{pred.prediction}}
+        <div class="row">
+            <div class="col">
+                <img src="static/uploads/{{ pred.img }}" width="150" />
+            </div>
+            <div class="col my-auto">
+                {{pred.prediction}}
+            </div>
+        </div>
         <br/>
     {% endfor %}
     <br/>

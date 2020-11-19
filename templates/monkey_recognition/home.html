@@ -4,13 +4,21 @@
 
 {% block content %}
 
-    <h3>Upload images of monkey</h3>
+    <h4>Monkey recognition tool</h4>
+    <p>This tool is able to recognize a monkey specie among: mantled howler, patas monkey, bald uakari,
+        japanese macaque, pygmy marmoset, white headed capuchin, silvery marmoset, squirrel monkey,
+        black headed nigh monkey and nilgiri langur.
+    </p>
+    <p>It is powered by a trained deep learning model.</p>
+    <p>The source code is available on <a href="https://github.com/davy-datascience/monkey_recognition">GitHub</a> </p>
+    <br/>
+    <h5>Select one or multiple images of monkeys:</h5>
     <form method="POST" action="" enctype="multipart/form-data">
       <p><input id="fileupload" type="file" name="file" accept="image/*" multiple></p>
-      <br />
-      <div id="dvPreview"></div>
-      <br />
-      <button type="submit" class="btn btn-secondary">Submit</button>
+
+      <div id="dvPreview" class="my-2"></div>
+
+      <button type="submit" class="btn btn-secondary">Predict</button>
     </form>
 
     <script language="javascript" type="text/javascript">
