@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <script>
+{% extends 'monkey_recognition/base.html' %}
 
-    </script>
+{% block title %}Monkey recognition{% endblock %}
+
+{% block content %}
     <h1>{{title}}</h1>
     {% for pred in predictions %}
         <img src="static/uploads/{{ pred.img }}" width="150" />
         is a {{pred.prediction}}
         <br/>
     {% endfor %}
-    <br/>
-
-</body>
-</html>
+{% endblock %}
