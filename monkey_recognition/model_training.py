@@ -1,7 +1,4 @@
-import os
-
 import boto3
-import tensorflow as tf
 from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import matplotlib.pyplot as plt
@@ -71,15 +68,15 @@ validation_generator = validation_datagen.flow_from_directory(
 
 # model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 
-history = model.fit(train_generator, epochs=10, steps_per_epoch=8, validation_data=validation_generator, verbose=1,
+history = model.fit(train_generator, epochs=5, steps_per_epoch=8, validation_data=validation_generator, verbose=1,
                     validation_steps=8)
 
 model.save("model.h5")
-s3 = boto3.client('s3')
-s3.upload_file(
-    'model.h5', 'monkey-recognition', 'model.h5',
-    ExtraArgs={'ACL': 'public-read'}
-)
+#s3 = boto3.client('s3')
+#s3.upload_file(
+#    'model.h5', 'monkey-recognition', 'model.h5',
+#    ExtraArgs={'ACL': 'public-read'}
+#)
 
 
 acc = history.history['accuracy']

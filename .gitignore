@@ -1,1 +1,3 @@
 /venv/
+/monkey_recognition/model.h5
+/config.ini
