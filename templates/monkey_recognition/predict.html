@@ -6,11 +6,11 @@
     <h1>{{title}}</h1>
     {% for pred in predictions %}
         <div class="row">
-            <div class="col">
-                <img src="static/uploads/{{ pred.img }}" width="150" />
+            <div class="col-1">
+                <img src="static/uploads/{{ pred.img }}" width="100" />
             </div>
             <div class="col my-auto">
-                {{pred.prediction}}
+                {{pred.prediction}} ({{pred.accuracy}})
             </div>
         </div>
         <br/>
