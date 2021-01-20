@@ -32,7 +32,8 @@ def get_monkey_prediction():
             result = np.where(classes[0] == best_prediction)
             index_specy = result[0][0]
             prediction_label = labels["common_name"].iloc[index_specy]
-            prediction = Prediction(uploaded_file.filename, prediction_label, str(best_prediction)[:5])
+            prediction = Prediction(uploaded_file.filename, prediction_label,
+                                    str.format("{0}%", str(best_prediction*100)[:5]))
             predictions.append(prediction)
     predictions_json = get_predictions_json(predictions)
     predictions_str = json.dumps(predictions_json)
